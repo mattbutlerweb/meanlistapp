@@ -26,4 +26,18 @@ export class ValidateService {
 
   }
 
+  validateAddNewListItem(item){
+
+    if(item.name == undefined || item.description == undefined || item.quantity == undefined){
+
+      return false;
+
+    } else {
+
+      return true;
+
+    }
+
+  }
+
 }

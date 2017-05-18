@@ -14,8 +14,12 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { ListService } from './services/list.service';
 
-import { AuthGuard } from './guards/auth.guard'
+import { AuthGuard } from './guards/auth.guard';
+import { NewlistComponent } from './components/newlist/newlist.component';
+import { NewlistitemComponent } from './components/newlistitem/newlistitem.component';
+import { ListComponent } from './components/list/list.component'
 
 const appRoutes: Routes = [
 
@@ -39,6 +43,12 @@ const appRoutes: Routes = [
   },
   {
 
+    path:'login/:message',
+    component: LoginComponent
+
+  },
+  {
+
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard]
@@ -48,6 +58,20 @@ const appRoutes: Routes = [
 
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
+
+  },
+  {
+
+    path: 'list/:list',
+    component: ListComponent,
+    canActivate: [AuthGuard]
+
+  },
+  {
+
+    path: 'newlistitem/:list',
+    component: NewlistitemComponent,
     canActivate: [AuthGuard]
 
   }
@@ -62,7 +86,10 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewlistComponent,
+    NewlistitemComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +97,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard, ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

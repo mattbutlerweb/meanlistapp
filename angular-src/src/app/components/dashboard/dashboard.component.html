@@ -1,3 +1,5 @@
-<p>
-  dashboard works!
-</p>
+<li class='btn btn-primary' *ngFor="let list of lists" [routerLink]="['/list/' +this.list.name]" style="display:block">
+
+  {{list.name}}
+
+</li>

@@ -1,0 +1,17 @@
+<h2 class="page-header"> {{listname}} </h2>
+
+<li class="btn btn-primary" [routerLink]="['/newlistitem/' +listname]">
+  Add New List Item
+</li>
+
+<div *ngFor="let listItem of listItems">
+  <p>
+    Item: {{listItem.name}}
+  </p>
+  <p>
+    Description: {{listItem.description}}
+  </p>
+  <p>
+    Amount: {{listItem.quantity}}
+  </p>
+</div>

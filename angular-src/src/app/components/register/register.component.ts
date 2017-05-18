@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ValidateService } from '../../services/validate.service'
-import { AuthService } from '../../services/auth.service'
+import { ValidateService } from '../../services/validate.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -72,7 +72,7 @@ export class RegisterComponent implements OnInit {
 
       if(data.success){
 
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login/registered']);
 
       } else {
 

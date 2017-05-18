@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
 
@@ -13,14 +13,21 @@ export class LoginComponent implements OnInit {
   username: String;
   password: String;
 
+  registered: String;
+
   loginError = false;
   loginErrorMessage = "";
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
 
-  ) { }
+  ) {
+
+    this.registered = route.snapshot.params['message'];
+
+  }
 
   ngOnInit() {
   }
