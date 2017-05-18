@@ -74,6 +74,13 @@ const appRoutes: Routes = [
     component: NewlistitemComponent,
     canActivate: [AuthGuard]
 
+  },
+  {
+
+    path: 'newlist',
+    component: NewlistComponent,
+    canActivate: [AuthGuard]
+
   }
 
 ]

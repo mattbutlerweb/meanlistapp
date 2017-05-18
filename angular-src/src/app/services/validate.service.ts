@@ -40,4 +40,18 @@ export class ValidateService {
 
   }
 
+  validateNewList(newlist){
+
+    if(newlist.name == undefined){
+
+      return false;
+
+    } else {
+
+      return true;
+      
+    }
+
+  }
+
 }

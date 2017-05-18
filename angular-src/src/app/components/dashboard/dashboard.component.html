@@ -1,3 +1,7 @@
+<li class="btn btn-primary" [routerLink]="['/newlist']">
+  Add New List
+</li>
+
 <li class='btn btn-primary' *ngFor="let list of lists" [routerLink]="['/list/' +this.list.name]" style="display:block">
 
   {{list.name}}

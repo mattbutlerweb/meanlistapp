@@ -52,6 +52,16 @@ export class ListService {
 
   }
 
+  saveNewList(newlist){
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.post('http://localhost:3000/lists/newlist', newlist, {headers: headers})
+      .map(res => res.json());
+
+  }
+
   loadUser(){
 
     const user = localStorage.getItem('user');
